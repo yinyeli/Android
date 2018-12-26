@@ -42,9 +42,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button01:
-                //http://192.168.10.111:8080/ServLogin?username=yyl&password=123456
-                sendRequestWithHttpURLConnection("http://192.168.10.111:8080/ServLogin?"+"username="+username.getText()+"&password="+password.getText());//获取连接
-                Toast.makeText(LoginActivity.this,"running ",Toast.LENGTH_SHORT).show();
+                showResponse("true");
+//                sendRequestWithHttpURLConnection("http://192.168.10.111:8080/ServLogin?"+"username="+username.getText()+"&password="+password.getText());//获取连接
+//                Toast.makeText(LoginActivity.this,"running ",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button02:
                 //跳转注册页面
