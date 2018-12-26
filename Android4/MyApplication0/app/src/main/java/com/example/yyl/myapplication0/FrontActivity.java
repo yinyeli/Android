@@ -1,12 +1,23 @@
 package com.example.yyl.myapplication0;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class FrontActivity extends AppCompatActivity {
+public class FrontActivity extends AppCompatActivity implements View.OnClickListener {
+    private Button mtrip;
+    private Button coach;
+    private TextView wenzhang1;
+    private TextView wenzhang2;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -32,8 +43,44 @@ public class FrontActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front);
+        mtrip=(Button) findViewById(R.id.trip);
+        mtrip.setOnClickListener(this);
+        coach=(Button) findViewById(R.id.jiaolian);
+        coach.setOnClickListener(this);
+        wenzhang1=(TextView)findViewById(R.id.wenzhang1);
+        wenzhang1.setOnClickListener(this);
+        wenzhang2=(TextView)findViewById(R.id.wenzhang2);
+        wenzhang2.setOnClickListener(this);
 
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.trip:
+                Intent intent = new Intent(FrontActivity.this,trip.class);
+                startActivity(intent);
+                break;
+//                sendRequestWithHttpURLConnection("http://192.168.10.111:8080/ServLogin?"+"username="+username.getText()+"&password="+password.getText());//获取连接
+//                Toast.makeText(LoginActivity.this,"running ",Toast.LENGTH_SHORT).show();
+            case R.id.jiaolian:
+                //跳转注册页面
+                Intent intent1 = new Intent(FrontActivity.this,coachActivity.class);
+                startActivity(intent1);
+                break;
+            case R.id.wenzhang1:
+                //跳转注册页面
+                Intent intent2 = new Intent(FrontActivity.this,articleActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.wenzhang2:
+                //跳转注册页面
+                Intent intent3 = new Intent(FrontActivity.this,articleActivity.class);
+                startActivity(intent3);
+                break;
+
+        }
+    }
 
 }
+
