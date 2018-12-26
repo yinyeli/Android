@@ -7,10 +7,17 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -37,23 +44,46 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.regbutton:
-                Toast.makeText(RegisterActivity.this,"正在注册",Toast.LENGTH_LONG).show();
-                new Thread(new RegThread()).start();
+                sendRequestWithHttpURLConnection("http://192.168.10.111:8080/Servregister?"+"username="+regUserName.getText()+"&password="+regPassWord.getText());//注册
                 break;
         }
     }
 
-    public class RegThread implements Runnable{
-        @Override
-        public void run() {
 
-            //获取服务器返回数据
-            String RegRet = WebServicePost.executeHttpPost(regUserName.getText().toString(),regPassWord.getText().toString(),"Servregister");
 
-            //更新UI，界面处理
-            showReq(RegRet);
-        }
+    private void sendRequestWithHttpURLConnection(final String strurl){
+        //发起网络请求
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                HttpURLConnection connection = null;
+                BufferedReader reader = null;
+                try{
+                    URL url = new URL(strurl);
+                    connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("GET");
+                    connection.setConnectTimeout(8000);
+                    connection.setReadTimeout(8000);
+                    InputStream in = connection.getInputStream();
+                    //对获取的数据流进行读取
+                    reader = new BufferedReader(new InputStreamReader(in));
+                    StringBuilder responseStringBulider = new StringBuilder();
+                    String line;
+                    while ((line = reader.readLine()) !=null){
+                        responseStringBulider.append(line);
+                    }
+                    //调用自定义函数，显示接受的str
+                    Log.d("mimi",responseStringBulider.toString());
+                    showReq(responseStringBulider.toString());
+                }catch (Exception e){
+                    Log.e("nimei","Ecceptions is happend"+e.getMessage());
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
+
+
     private void showReq(final String RegRet){
         runOnUiThread(new Runnable() {
             @Override

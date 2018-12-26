@@ -39,10 +39,10 @@ public class ServLogin extends HttpServlet {
         try {
             if (rs.next()) {
                 System.out.println("login sucess");
-               out.print("true");
+               out.write("true");
             } else {
                 System.out.println("login failed......");
-                out.print("false");
+                out.write("false");
             }
         } catch (SQLException e) {
             e.printStackTrace();

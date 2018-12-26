@@ -33,16 +33,16 @@ public class Servregister extends HttpServlet {
         try {
             if (rs.next()) {
                 System.out.println("账号已存在");
-                out.print("false2");
+                out.write("false2");
             } else {
                 String sqlInsert = "insert into users(user_id,user_password) values('"+ user_id +"','" + user_pw + "')";
                 System.out.println("执行sql语句："+sqlInsert);
                 DB.elsql(stmt,sqlInsert);
                 System.out.println("账号已增加");
-                out.print("true");
+                out.write("true");
             }
         } catch (SQLException e) {
-            out.print("false");
+            out.write("false");
             e.printStackTrace();
         }
     }
