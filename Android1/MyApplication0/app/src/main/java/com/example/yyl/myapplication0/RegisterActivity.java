@@ -48,10 +48,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         public void run() {
 
             //获取服务器返回数据
-            String RegRet = WebServicePost.executeHttpPost(regUserName.getText().toString(),regPassWord.getText().toString(),"Servregister");
 
-            //更新UI，界面处理
-            showReq(RegRet);
         }
     }
     private void showReq(final String RegRet){
