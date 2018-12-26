@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/add_item"
@@ -7,5 +8,8 @@
 
     <item android:id="@+id/re_item"
         android:title="send"/>
+    <item
+        android:id="@+id/id_quit"
+        android:title="quit" />
 
 </menu>

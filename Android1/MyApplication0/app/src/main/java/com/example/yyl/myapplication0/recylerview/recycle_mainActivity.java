@@ -16,6 +16,7 @@ public class recycle_mainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);//继承父类
         setContentView(R.layout.recycler_activity);//设置界面资源
+
         initPersons();//初始化数据
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
