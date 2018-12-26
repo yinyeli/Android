@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application0</string>
+    <string name="upw">密码</string>
+    <string name="uid">账号</string>
+    <string name="reg">注册</string>
+    <string name="login">登录</string>
+    <string name="login_name">请登录</string>
+    <string name="reg_name">欢迎注册</string>
+</resources>
