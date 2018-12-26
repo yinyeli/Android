@@ -1,14 +1,11 @@
 package com.example.yyl.myapplication0;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,7 +55,7 @@ public class FrontActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.trip:
-                Intent intent = new Intent(FrontActivity.this,trip.class);
+                Intent intent = new Intent(FrontActivity.this,tripActivity.class);
                 startActivity(intent);
                 break;
 //                sendRequestWithHttpURLConnection("http://192.168.10.111:8080/ServLogin?"+"username="+username.getText()+"&password="+password.getText());//获取连接

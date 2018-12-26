@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".trip" />
+        <activity android:name=".tripActivity" />
         <activity android:name=".coachActivity" />
         <activity android:name=".articleActivity"></activity>
     </application>
