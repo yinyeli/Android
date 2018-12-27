@@ -9,17 +9,17 @@
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="409dp"
+        android:layout_height="343dp"
+        android:layout_marginBottom="50dp"
         android:layout_weight="7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/title">
 
         <TextView
-            android:id="@+id/passage_content"
+            android:id="@+id/passage_content1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -32,8 +32,8 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="170dp"
-        android:layout_height="45dp"
+        android:layout_width="190dp"
+        android:layout_height="62dp"
         android:layout_marginStart="200dp"
         android:layout_marginEnd="215dp"
         android:layout_marginBottom="5dp"
@@ -44,10 +44,10 @@
         app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/next1"
         android:layout_width="134dp"
         android:layout_height="64dp"
         android:layout_marginStart="116dp"

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="409dp"
+        android:layout_marginBottom="120dp"
         android:layout_weight="7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/passage_content"
+            android:id="@+id/passage_content3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -32,7 +32,7 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="170dp"
+        android:layout_width="329dp"
         android:layout_height="45dp"
         android:layout_marginStart="275dp"
         android:layout_marginEnd="215dp"
@@ -41,12 +41,13 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/next3"
         android:layout_width="134dp"
         android:layout_height="64dp"
         android:layout_marginStart="125dp"
