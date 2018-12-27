@@ -56,6 +56,9 @@
         <activity android:name=".lbs_activity"/>
         <activity android:name=".home_activity"/>
         <activity android:name=".activity_qqlogin"/>
+        <activity android:name=".tripActivity" />
+        <activity android:name=".coachActivity" />
+        <activity android:name=".articleActivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

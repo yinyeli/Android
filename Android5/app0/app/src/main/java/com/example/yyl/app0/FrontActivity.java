@@ -6,9 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class FrontActivity extends AppCompatActivity {
+public class FrontActivity extends AppCompatActivity implements View.OnClickListener{
+    private Button mtrip;
+    private Button coach;
+    private TextView wenzhang1;
+    private TextView wenzhang2;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -61,7 +67,43 @@ public class FrontActivity extends AppCompatActivity {
                 startActivity(intent);//执行Intent
             }
         });
+
+        mtrip=(Button) findViewById(R.id.trip);
+        mtrip.setOnClickListener(this);
+        coach=(Button) findViewById(R.id.jiaolian);
+        coach.setOnClickListener(this);
+        wenzhang1=(TextView)findViewById(R.id.wenzhang1);
+        wenzhang1.setOnClickListener(this);
+        wenzhang2=(TextView)findViewById(R.id.wenzhang2);
+        wenzhang2.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.trip:
+                Intent intent = new Intent(FrontActivity.this,tripActivity.class);
+                startActivity(intent);
+                break;
+//                sendRequestWithHttpURLConnection("http://192.168.10.111:8080/ServLogin?"+"username="+username.getText()+"&password="+password.getText());//获取连接
+//                Toast.makeText(LoginActivity.this,"running ",Toast.LENGTH_SHORT).show();
+            case R.id.jiaolian:
+                //跳转教练页面
+                Intent intent1 = new Intent(FrontActivity.this,coachActivity.class);
+                startActivity(intent1);
+                break;
+            case R.id.wenzhang1:
+                //跳转文章页面
+                Intent intent2 = new Intent(FrontActivity.this,articleActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.wenzhang2:
+                //跳转文章页面
+                Intent intent3 = new Intent(FrontActivity.this,articleActivity.class);
+                startActivity(intent3);
+                break;
+
+        }
+    }
 
 }
