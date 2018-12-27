@@ -9,7 +9,7 @@
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
-        android:layout_height="343dp"
+        android:layout_height="388dp"
         android:layout_marginBottom="50dp"
         android:layout_weight="7"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,20 +36,18 @@
         android:layout_height="62dp"
         android:layout_marginStart="200dp"
         android:layout_marginEnd="215dp"
-        android:layout_marginBottom="5dp"
         android:text="教练资料"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/next1"
-        android:layout_width="134dp"
-        android:layout_height="64dp"
+        android:layout_width="171dp"
+        android:layout_height="47dp"
         android:layout_marginStart="116dp"
         android:layout_marginBottom="5dp"
         android:text="下一位"
